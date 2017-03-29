@@ -180,15 +180,16 @@ angular.module('mgcrea.ngStrap.tooltip', ['mgcrea.ngStrap.core', 'mgcrea.ngStrap
           if (angular.isDefined(options.onBeforeShow) && angular.isFunction(options.onBeforeShow)) {
             options.onBeforeShow($tooltip);
           }
-          var parent;
-          var after;
+          var parent = null;
+          var after = null;
+
           if (options.container) {
             parent = tipContainer;
-            if (tipContainer[0].lastChild) {
-              after = angular.element(tipContainer[0].lastChild);
-            } else {
-              after = null;
-            }
+            // / if (tipContainer[0].lastChild) {
+            //   after = angular.element(tipContainer[0].lastChild);
+            // } else {
+            //   after = null;
+            // }
           } else {
             parent = null;
             after = element;

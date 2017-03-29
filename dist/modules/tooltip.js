@@ -1,6 +1,6 @@
 /**
  * angular-strap
- * @version v2.3.12 - 2017-01-26
+ * @version v2.3.12 - 2017-03-29
  * @link http://mgcrea.github.io/angular-strap
  * @author Olivier Louvignes <olivier@mg-crea.com> (https://github.com/mgcrea)
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -136,15 +136,10 @@ angular.module('mgcrea.ngStrap.tooltip', [ 'mgcrea.ngStrap.core', 'mgcrea.ngStra
         if (angular.isDefined(options.onBeforeShow) && angular.isFunction(options.onBeforeShow)) {
           options.onBeforeShow($tooltip);
         }
-        var parent;
-        var after;
+        var parent = null;
+        var after = null;
         if (options.container) {
           parent = tipContainer;
-          if (tipContainer[0].lastChild) {
-            after = angular.element(tipContainer[0].lastChild);
-          } else {
-            after = null;
-          }
         } else {
           parent = null;
           after = element;
